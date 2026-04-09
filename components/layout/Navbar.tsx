@@ -16,7 +16,7 @@ export default function Navbar() {
         <li><a href="#how">How it works</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#stories">Stories</a></li>
-        <li><Link href="/Login" className="nav-cta">Get Started</Link></li>
+        <li><Link href="/login" className="nav-cta">Get Started</Link></li>
       </ul>
     </nav>
   );

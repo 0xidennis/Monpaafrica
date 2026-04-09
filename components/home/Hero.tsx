@@ -16,7 +16,7 @@ export default function Hero() {
           Monpa holds your money safe until both parties are satisfied. No more scammers. No more lost payments. Just secure, fair transactions — for every Nigerian.
         </p>
         <div className="hero-actions">
-          <Link href="/Login" className="btn-primary">
+          <Link href="/login" className="btn-primary">
             Start an Escrow
             <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
               <path d="M2.5 7.5h10M9 4l3.5 3.5L9 11" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
