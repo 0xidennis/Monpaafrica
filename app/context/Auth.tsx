@@ -20,6 +20,8 @@ interface AuthContextType {
   logout: () => void;
   verifyOtp: (userId: string, otp: string) => Promise<any>;
   resendOtp: (userId: string) => Promise<any>;
+  loginWithGoogle: () => void;
+  handleGoogleCallback: (token: string, user: User) => void;
 }
 
 interface AuthProviderProps {
@@ -122,6 +124,19 @@ export function AuthProvider({ children }: AuthProviderProps) {
     setPendingUserId(null);
   };
 
+  // ✅ GOOGLE OAUTH — redirect browser to backend Google auth URL
+  const loginWithGoogle = () => {
+    window.location.href = "https://monpa-backend.onrender.com/api/auth/google";
+  };
+
+  // ✅ GOOGLE CALLBACK — called by /auth/callback page after redirect
+  const handleGoogleCallback = (googleToken: string, googleUser: User) => {
+    localStorage.setItem("token", googleToken);
+    localStorage.setItem("user", JSON.stringify(googleUser));
+    setToken(googleToken);
+    setUser(googleUser);
+  };
+
   // ✅ VERIFY OTP
   const verifyOtp = async (userId: string, otp: string) => {
     try {
@@ -179,7 +194,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, token, loading, pendingUserId, login, signup, logout, verifyOtp, resendOtp }}>
+    <AuthContext.Provider value={{ user, token, loading, pendingUserId, login, signup, logout, verifyOtp, resendOtp, loginWithGoogle, handleGoogleCallback }}>
       {children}
     </AuthContext.Provider>
   );
