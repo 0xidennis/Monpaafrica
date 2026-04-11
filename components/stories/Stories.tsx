@@ -1,3 +1,5 @@
+"use client"
+
 export default function Stories() {
   return (
     <section className="section" id="stories">

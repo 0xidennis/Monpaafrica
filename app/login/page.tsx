@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useAuth } from "../context/Auth";
+import Link from "next/link";
 
 // HYBRID EXACT CLONE: original CSS preserved + React logic
 export default function LoginPage() {
@@ -43,21 +44,21 @@ export default function LoginPage() {
         <div className="orb o2"></div>
 
         <div className="lc">
-          <a href="#" className="logo-link">
-            <div className="logo-icon">⬡</div>
-            <span className="logo-text">monpa</span>
-          </a>
+          <Link href="/" className="logo-link flex items-center gap-2 mb-6">
+            <div className="logo-icon bg-black "><svg width="20" height="20" viewBox="0 0 18 18" fill="none"><path d="M9 2L3 5.5V12.5L9 16L15 12.5V5.5L9 2Z" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+           <span className="logo-text">monpa</span>
+          </Link>
 
           <h1>
             Trade safely.<br />
             <span>Pay with confidence.</span>
           </h1>
 
-          <p>
+          <p className=" opacity-50">
             Nigeria's most trusted escrow platform. Your money stays protected until both parties are satisfied.
           </p>
 
-          <div className="feats">
+          <div className="feats opacity-60">
             <div className="feat">✔ Free to join — pay per transaction only</div>
             <div className="feat">✔ Bank-grade encryption on every deal</div>
             <div className="feat">✔ Disputes resolved within 48 hours</div>
@@ -86,18 +87,18 @@ export default function LoginPage() {
       </div>
 
       {/* RIGHT */}
-      <div className="right">
-        <div className="fw">
-          <h2 className="ftitle">Welcome back</h2>
+      <div className="right ">
+        <div className="fw ">
+          <h2 className="ftitle text-3xl font-bold ">Welcome back</h2>
           {error && <div className="ebox">{error}</div>}
-          <p className="fsub">
-            No account? <a href="#">Sign up free →</a>
+          <p className="fsub text-gray-400">
+            No account?<span className="text-blue-500 hover:underline font-bold"> <Link href="/signup">Sign up free →</Link></span>
           </p>
 
           {error && <div className="ebox on">{error}</div>}
 
           <div className="grp">
-            <label className="lbl">Email address</label>
+            <label className="lbl text-sm font-bold">Email address</label>
             <input
               className={`inp ${error ? "bad" : ""}`}
               value={email}
@@ -107,7 +108,7 @@ export default function LoginPage() {
           </div>
 
           <div className="grp">
-            <label className="lbl">Password</label>
+            <label className="lbl text-sm font-bold">Password</label>
             <input
               type="password"
               className={`inp ${error ? "bad" : ""}`}
@@ -116,11 +117,20 @@ export default function LoginPage() {
               placeholder="Your password"
             />
           </div>
+          <div>
+            <Link href="/forgot-password" className="text-sm text-blue-500 hover:underline font-bold float-right">
+              Forgot password?
+            </Link>
+          </div>
 
           <button className="sbtn" onClick={doLogin} disabled={loading}>
-            {loading ? "Signing in..." : "Sign in"}
+            {loading ? "Signing in..." : "Sign in →"}
           </button>
+          <div className="text-center ">
+          <p><Link href="/"> Back to homepage</Link></p>
         </div>
+        </div>
+        
       </div>
 
       {/* EXACT CSS CLONE */}

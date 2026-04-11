@@ -1,3 +1,5 @@
+"use client";
+
 export default function How() {
   return (
     <section className="section section-alt" id="how">

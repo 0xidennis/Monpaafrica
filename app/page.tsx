@@ -1,26 +1,27 @@
-import React from 'react'
-import Navbar from '@/components/layout/Navbar'
-import Hero from '@/components/home/Hero'
-import TrustStrip from '@/components/home/TrustStrip'
-import Feature from '@/components/features/Feature'
-import UseCases from '@/components/home/UseCases'
-import Testimonials from '@/components/home/Testimonials'
-import Faces from '@/components/home/Faces'
-import Footer from '@/components/layout/Footer'
+"use client"
 
-export default function Home ()  {
+import CTA from '@/components/cta/Cta'
+import Features from '@/components/features/Feature'
+import Hero from '@/components/home/Hero'
+import How from '@/components/how/How'
+import Footer from '@/components/layout/Footer'
+import Navbar from '@/components/layout/Navbar'
+import Stats from '@/components/stats/Stats'
+import Stories from '@/components/stories/Stories'
+
+export default function Home() {
   return (
     <>
-      <Navbar />
-      <main className="flex-grow">
+      <main>
+        <Navbar />
         <Hero />
-        <TrustStrip />
-        <Feature />
-        <UseCases />
-        <Testimonials />
-        <Faces />
+        <Stats />
+        <Stories />
+        <How />
+        <Features />
+        <CTA />
+        <Footer />
       </main>
-      <Footer />
     </>
   )
 }

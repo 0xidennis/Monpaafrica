@@ -1,3 +1,5 @@
+"use client"
+
 export default function UseCases() {
   return (
     <section className="section" id="usecases">

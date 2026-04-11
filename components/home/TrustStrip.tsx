@@ -1,3 +1,5 @@
+"use client"
+
 export default function TrustStrip() {
   return (
     <div className="trust-strip">

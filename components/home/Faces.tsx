@@ -1,3 +1,5 @@
+"use client"
+
 export default function Faces() {
   return (
     <section className="faces-section">
