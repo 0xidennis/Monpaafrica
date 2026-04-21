@@ -195,14 +195,17 @@ export default function LoginPage() {
         .dbox{margin-top:40px;background:rgba(0,0,0,.2);padding:16px;border-radius:12px}
 
         .right{display:flex;align-items:center;justify-content:center;padding:40px}
+        @media(max-width:480px){.right{padding:24px 16px}}
         .fw{width:100%;max-width:400px}
 
-        .inp{width:100%;padding:12px;border:1px solid #E2E8F0;border-radius:8px;margin-top:6px}
+        .inp{width:100%;padding:12px;border:1px solid #E2E8F0;border-radius:8px;margin-top:6px;font-size:16px}
         .bad{border-color:#EF4444}
 
-        .sbtn{width:100%;margin-top:16px;background:#2563EB;color:#fff;padding:14px;border-radius:10px}
+        .sbtn{width:100%;margin-top:16px;background:#2563EB;color:#fff;padding:14px;border-radius:10px;font-size:0.95rem;font-weight:600;border:none;cursor:pointer}
 
         .ebox{background:#FEE2E2;padding:10px;border-radius:8px;margin-bottom:10px}
+
+        h1{font-size:clamp(1.6rem,4vw,2.4rem)}
       `}</style>
     </div>
   );

@@ -181,11 +181,11 @@ export default function VerifyOtpPage() {
       </div>
 
       {/* RIGHT PANEL */}
-      <div className="flex items-center justify-center px-[40px] py-[48px]">
-        <div className="w-full max-w-[420px]">
+      <div className="flex items-center justify-center px-[24px] sm:px-[48px] py-[40px] sm:py-[56px]">
+        <div className="w-full max-w-[400px]">
 
-          {/* Header */}
-          <div className="mb-[8px] flex items-center gap-[14px]">
+          {/* Header — icon + title */}
+          <div className="flex items-center gap-[14px] mb-[24px]">
             <div className="w-[48px] h-[48px] rounded-[14px] bg-[#EFF6FF] flex items-center justify-center shrink-0">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M12 2L4 6V14C4 18.4 7.4 22.5 12 23.5C16.6 22.5 20 18.4 20 14V6L12 2Z"
@@ -194,12 +194,13 @@ export default function VerifyOtpPage() {
               </svg>
             </div>
             <div>
-              <h2 className="text-[1.8rem] font-extrabold tracking-[-0.03em] leading-[1.1]">Enter OTP</h2>
-              <p className="text-[0.85rem] text-[#64748B] mt-[2px]">6-digit code sent to your email</p>
+              <h2 className="text-[1.6rem] sm:text-[1.8rem] font-extrabold tracking-[-0.03em] leading-[1.1]">Enter OTP</h2>
+              <p className="text-[0.82rem] text-[#64748B] mt-[4px]">6-digit code sent to your email</p>
             </div>
           </div>
 
-          <p className="text-[0.92rem] text-[#64748B] mb-[36px] mt-[8px]">
+          {/* Resend inline */}
+          <p className="text-[0.88rem] text-[#64748B] mb-[28px]">
             Didn&apos;t receive it?{" "}
             {cooldown > 0 ? (
               <span className="text-[#94A3B8] font-medium">Resend in {cooldown}s</span>
@@ -216,7 +217,7 @@ export default function VerifyOtpPage() {
 
           {/* Error / Success banners */}
           {error && (
-            <div className="flex items-center gap-[10px] bg-red-50 border border-red-200 text-red-600 text-[0.85rem] rounded-[10px] px-[14px] py-[12px] mb-[24px]">
+            <div className="flex items-center gap-[10px] bg-red-50 border border-red-200 text-red-600 text-[0.82rem] rounded-[10px] px-[14px] py-[10px] mb-[20px]">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0">
                 <circle cx="8" cy="8" r="7" stroke="#EF4444" strokeWidth="1.5" />
                 <path d="M8 5v3.5M8 10.5v.5" stroke="#EF4444" strokeWidth="1.5" strokeLinecap="round" />
@@ -225,7 +226,7 @@ export default function VerifyOtpPage() {
             </div>
           )}
           {success && (
-            <div className="flex items-center gap-[10px] bg-green-50 border border-green-200 text-green-700 text-[0.85rem] rounded-[10px] px-[14px] py-[12px] mb-[24px]">
+            <div className="flex items-center gap-[10px] bg-green-50 border border-green-200 text-green-700 text-[0.82rem] rounded-[10px] px-[14px] py-[10px] mb-[20px]">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="shrink-0">
                 <circle cx="8" cy="8" r="7" stroke="#10B981" strokeWidth="1.5" />
                 <path d="M5 8l2 2 4-4" stroke="#10B981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -235,7 +236,7 @@ export default function VerifyOtpPage() {
           )}
 
           {/* OTP Input Grid */}
-          <div className="flex gap-[10px] justify-between mb-[32px]" onPaste={handlePaste}>
+          <div className="flex gap-[10px] justify-between mb-[24px]" onPaste={handlePaste}>
             {otp.map((digit, idx) => (
               <input
                 key={idx}
@@ -249,7 +250,7 @@ export default function VerifyOtpPage() {
                 onFocus={(e) => e.target.select()}
                 id={`otp-input-${idx}`}
                 className={[
-                  "w-[52px] h-[60px] text-center text-[1.5rem] font-bold rounded-[12px]",
+                  "w-full max-w-[52px] h-[52px] sm:h-[58px] text-center text-[1.3rem] sm:text-[1.5rem] font-bold rounded-[10px]",
                   "border-[2px] outline-none transition-all duration-150",
                   "focus:border-[#2563EB] focus:bg-[#EFF6FF] focus:shadow-[0_0_0_4px_rgba(37,99,235,0.12)]",
                   digit
@@ -266,7 +267,7 @@ export default function VerifyOtpPage() {
             id="verify-otp-btn"
             onClick={handleVerify}
             disabled={verifying || loading || !allFilled}
-            className="w-full bg-[#2563EB] hover:bg-[#1D4ED8] disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold text-[0.95rem] py-[14px] rounded-[10px] flex items-center justify-center gap-[8px] transition-colors duration-150"
+            className="w-full bg-[#2563EB] hover:bg-[#1D4ED8] disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold text-[0.92rem] py-[13px] rounded-[10px] flex items-center justify-center gap-[8px] transition-colors duration-150"
           >
             {verifying || loading ? (
               <>
@@ -286,14 +287,14 @@ export default function VerifyOtpPage() {
             )}
           </button>
 
-          {/* Resend block */}
-          <div className="mt-[20px] p-[16px] rounded-[12px] bg-[#F8FAFC] border border-[#E2E8F0] text-[0.82rem] text-[#64748B]">
+          {/* Resend help block */}
+          <div className="mt-[24px] p-[16px] rounded-[12px] bg-[#F8FAFC] border border-[#E2E8F0] text-[0.8rem] text-[#64748B]">
             <div className="font-semibold text-[#0F172A] mb-[4px]">Didn&apos;t get the code?</div>
-            <div className="mb-[10px]">Check your spam/junk folder. The code is valid for 10 minutes.</div>
+            <div className="mb-[8px]">Check your spam/junk folder. The code is valid for 10 minutes.</div>
             <button
               onClick={handleResend}
               disabled={resending || cooldown > 0}
-              className="inline-flex items-center gap-[6px] text-[#2563EB] font-semibold text-[0.82rem] disabled:opacity-40 disabled:cursor-not-allowed hover:underline bg-transparent border-none p-0 cursor-pointer"
+              className="inline-flex items-center gap-[6px] text-[#2563EB] font-semibold text-[0.8rem] disabled:opacity-40 disabled:cursor-not-allowed hover:underline bg-transparent border-none p-0 cursor-pointer"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path d="M1.5 7A5.5 5.5 0 1 1 7 12.5" stroke="#2563EB" strokeWidth="1.4" strokeLinecap="round" />
@@ -303,8 +304,9 @@ export default function VerifyOtpPage() {
             </button>
           </div>
 
-          <div className="text-center mt-[24px]">
-            <Link href="/signup" className="text-[0.85rem] text-[#64748B] hover:text-[#2563EB] transition-colors">
+          {/* Back link */}
+          <div className="text-center mt-[20px]">
+            <Link href="/signup" className="text-[0.82rem] text-[#64748B] hover:text-[#2563EB] transition-colors">
               ← Back to sign up
             </Link>
           </div>

@@ -3,7 +3,7 @@
 
 export default function Cards() {
    return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       <div className="bg-blue-600 text-white p-6 rounded-xl relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:20px_20px]" />
         <p className="text-[11px] opacity-80">WALLET BALANCE</p>

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Sidebar from "@/components/Sidebar";
-import Topbar from "@/components/Topbar";
+import Sidebar from "@/components/sidebar/Sidebar";
+import TransTopbar from "@/components/topbar/TransTopbar";
 
 export default function Page() {
   const [open, setOpen] = useState(false);
@@ -12,7 +12,7 @@ export default function Page() {
       
       <Sidebar open={open} setOpen={setOpen} />
 
-      <div className="flex-1 md:ml-[240px]">
+      <div className="flex-1 md:ml-[250px]">
         <TransTopbar setOpen={setOpen} />
 
         <div className="p-5 space-y-5">

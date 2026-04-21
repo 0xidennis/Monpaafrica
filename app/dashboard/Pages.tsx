@@ -19,21 +19,17 @@ export default function Dashboard() {
   return (
     <div className="flex bg-[#F8FAFC] min-h-screen text-[#0F172A]">
 
-      <Sidebar />
+      <Sidebar open={open} setOpen={setOpen} />
 
-      {open && (
-        <div onClick={() => setOpen(false)} className="fixed inset-0 bg-black/40 z-40 md:hidden" />
-      )}
-
-      <div className="flex-1 md:ml-[240px]">
+      <div className="flex-1 md:ml-[250px]">
         <Topbar setOpen={setOpen} setNotif={setNotif} />
 
-        <div className="p-[22px] space-y-[22px]">
+        <div className="p-4 sm:p-[22px] space-y-[22px]">
           <Cards />
           <Action/>
 
-          <div className="grid grid-cols-3 gap-4">
-            <div className="col-span-2">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <div className="lg:col-span-2">
           <Transactions />
         </div>
         <ActiveEscrow/>

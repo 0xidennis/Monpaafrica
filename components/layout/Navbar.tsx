@@ -1,6 +1,11 @@
-import Link from 'next/link';
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav>
       <Link href="/" className="logo">
@@ -12,12 +17,44 @@ export default function Navbar() {
         </div>
         mon<span>pa</span>
       </Link>
+
+      {/* Desktop nav links */}
       <ul className="nav-links">
         <li><a href="#how">How it works</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#stories">Stories</a></li>
         <li><Link href="/login" className="nav-cta">Get Started</Link></li>
       </ul>
+
+      {/* Mobile hamburger button */}
+      <button
+        className="hamburger"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle menu"
+      >
+        <span className={`hamburger-line ${menuOpen ? "open" : ""}`} />
+        <span className={`hamburger-line ${menuOpen ? "open" : ""}`} />
+        <span className={`hamburger-line ${menuOpen ? "open" : ""}`} />
+      </button>
+
+      {/* Mobile menu overlay */}
+      {menuOpen && (
+        <div className="mobile-menu" onClick={() => setMenuOpen(false)}>
+          <div className="mobile-menu-inner" onClick={(e) => e.stopPropagation()}>
+            <ul className="mobile-menu-links">
+              <li><a href="#how" onClick={() => setMenuOpen(false)}>How it works</a></li>
+              <li><a href="#features" onClick={() => setMenuOpen(false)}>Features</a></li>
+              <li><a href="#stories" onClick={() => setMenuOpen(false)}>Stories</a></li>
+            </ul>
+            <Link href="/login" className="btn-primary mobile-menu-cta" onClick={() => setMenuOpen(false)}>
+              Get Started
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+                <path d="M2.5 7.5h10M9 4l3.5 3.5L9 11" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
