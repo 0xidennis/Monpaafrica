@@ -13,10 +13,10 @@ export default function CTA() {
   ];
 
   return (
-    <section className="relative w-full py-[88px] sm:py-[104px] px-[5%] sm:px-[6%] text-center bg-[#0f172a] overflow-hidden">
+    <section className="relative w-full  px-[5%] sm:px-[6%] text-center bg-[#0f172a] overflow-hidden">
       
       {/* Background layers */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#0f172a]"></div>
+      <div className="absolute inset-0  from-[#1e293b] via-[#0f172a] to-[#0f172a]"></div>
       
       {/* Subtle radial glow */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse,rgba(37,99,235,0.12)_0%,transparent_65%)] blur-[20px]"></div>

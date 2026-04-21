@@ -1,30 +1,30 @@
-"use client"
-
+"use client";
 
 import TestimonialCard from "./TestimonyCard";
 
 export default function Testimonials() {
   return (
-    <section className="bg-[#f8fafc] py-[72px] md:py-[96px]">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10">
+    <section className="bg-[#F1F5F9] py-[80px] gap-30">
+      <div className=" mx-auto px-6">
 
         {/* HEADER */}
-        <div className="mb-[48px] max-w-[640px]">
-          <p className="text-[12px] font-semibold tracking-[0.12em] text-[#2563EB] mb-[12px]">
+        <div className="mb-30 ">
+          <p className="text-[12px] font-semibold tracking-[0.14em] text-[#2563EB] mb-30">
             — TESTIMONIALS
           </p>
 
-          <h2 className="text-[28px] md:text-[40px] font-extrabold tracking-[-0.02em] text-[#0f172a] leading-[1.2]">
+          <h2 className="text-[32px] md:text-[44px] font-bold tracking-[-0.02em] text-[#0B1A2B] leading-[1.2]">
             What our users are saying.
           </h2>
 
-          <p className="mt-[12px] text-[15px] text-[#64748b] leading-[1.6]">
-            Don’t take our word for it — hear it directly from the people Monpa has helped.
+          <p className="mt-[14px] text-[15px] text-[#64748B] leading-[1.6]">
+            Don’t take our word for it — hear it directly from the people
+            Monpa has helped.
           </p>
         </div>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px]">
           <TestimonialCard
             text="I was deceived twice buying phones online before Monpa. Now I don't release a kobo until I confirm the item is genuine. No more wahala, no more regret."
             name="Adaeze Okonkwo"

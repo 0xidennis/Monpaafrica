@@ -1,6 +1,5 @@
-"use client"
+"use client";
 
-// components/sections/Hero.tsx
 import Image from "next/image";
 
 const users = [
@@ -13,28 +12,30 @@ const users = [
 
 export default function Hero() {
   return (
-    <section className="bg-black text-white h-500 ">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-[72px] md:py-[96px] flex  md:flex-row items-center justify-between gap-[48px]">
+    <section className="bg-black text-white h-400 flex items-center justify-center">
+      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 flex items-center justify-between">
 
         {/* TEXT */}
-        <div className="max-w-[520px]">
-          <h1 className="text-[32px] md:text-[52px] leading-[1.1] font-[700] tracking-[-0.02em]">
+        <div className="max-w-xl">
+          <h1 className="text-[34px] md:text-[52px] font-semibold leading-[1.1] tracking-[-0.02em]">
             Real Nigerians.
             <br />
             Real protection.
           </h1>
 
-          <p className="mt-[16px] text-[15px] md:text-[16px] leading-[1.6] text-gray-300">
-            Buyers, sellers, freelancers, landlords, and importers across 36 states are using Monpa to trade without fear.
+          <p className="mt-4 text-[15px] md:text-[16px] text-gray-300 leading-[1.6]">
+            Buyers, sellers, freelancers, landlords, and importers
+            <br />
+            across 36 states are using Monpa to trade without fear.
           </p>
         </div>
 
-        {/* AVATAR ROW */}
-        <div className="flex items-center gap-[12px]">
+        {/* AVATARS */}
+        <div className="flex items-center gap-3">
           {users.map((src, i) => (
             <div
               key={i}
-              className="w-[56px] h-[56px] md:w-[64px] md:h-[64px] rounded-[14px] overflow-hidden"
+              className="w-[58px] h-[58px] md:w-[64px] md:h-[64px] rounded-xl overflow-hidden"
             >
               <Image
                 src={src}

@@ -7,40 +7,35 @@ export default function TestimonialCard({
   name,
   role,
   image,
-}: {
-  text: string;
-  name: string;
-  role: string;
-  image: string;
-}) {
+}: any) {
   return (
-    <div className="bg-white border border-gray-100 rounded-[16px] p-[24px] shadow-sm">
+    <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-[18px] ">
 
       {/* STARS */}
-      <div className="text-[#F59E0B] text-[14px] mb-[16px] tracking-[2px]">
+      <div className="text-[#F59E0B] text-[14px] mb-[14px] tracking-[2px]">
         ★★★★★
       </div>
 
       {/* TEXT */}
-      <p className="text-[15px] leading-[1.7] text-[#64748b] mb-[24px]">
-        {text}
+      <p className="text-[15px] leading-[1.7] text-[#334155] mb-[22px]">
+        "{text}"
       </p>
 
       {/* USER */}
-      <div className="flex items-center gap-[12px]">
+      <div className="flex items-center gap-[10px]">
         <Image
           src={image}
           alt={name}
-          width={40}
-          height={40}
+          width={36}
+          height={36}
           className="rounded-full object-cover"
         />
 
         <div>
-          <p className="text-[14px] font-semibold text-[#0f172a]">
+          <p className="text-[14px] font-semibold text-[#0F172A]">
             {name}
           </p>
-          <p className="text-[12px] text-gray-500">{role}</p>
+          <p className="text-[12px] text-[#64748B]">{role}</p>
         </div>
       </div>
     </div>
