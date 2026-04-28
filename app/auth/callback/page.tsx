@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useAuth } from "../../context/Auth";
 
+export const dynamic = "force-dynamic";
+
 export default function AuthCallbackPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -45,11 +47,11 @@ export default function AuthCallbackPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#F8FAFC]">
-      <div className="text-center max-w-[360px] px-6">
+      <div className="text-center  px-6">
         {status === "loading" ? (
           <>
             {/* Spinner */}
-            <div className="mx-auto mb-6 w-[64px] h-[64px] rounded-[18px] bg-[#EFF6FF] flex items-center justify-center">
+            <div className="mx-auto mb-6  rounded-[18px] bg-[#EFF6FF] flex items-center justify-center">
               <svg
                 className="animate-spin"
                 width="32"
@@ -82,7 +84,7 @@ export default function AuthCallbackPage() {
         ) : (
           <>
             {/* Error state */}
-            <div className="mx-auto mb-6 w-[64px] h-[64px] rounded-[18px] bg-red-50 flex items-center justify-center">
+            <div className="mx-auto mb-6  rounded-[18px] bg-red-50 flex items-center justify-center">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
                 <circle cx="12" cy="12" r="10" stroke="#EF4444" strokeWidth="1.8" />
                 <path
