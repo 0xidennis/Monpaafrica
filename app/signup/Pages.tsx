@@ -83,8 +83,8 @@ export default function RegisterPage() {
         <div className="relative z-10 w-full max-w-[400px] mx-auto flex flex-col">
 
           {/* Logo */}
-          <a className="flex items-center gap-[10px] mb-[56px]">
-            <div className="w-[36px] h-[36px] rounded-[9px] bg-white/20 flex items-center justify-center shrink-0">
+          <a className="flex items-center gap-[10px] mt-[10px] mt-[-40px] w-max">
+            <div className="w-[36px] h-[36px] rounded-[9px] flex items-center justify-center shrink-0">
               <svg width="20" height="20" viewBox="0 0 18 18" fill="none">
                 <path d="M9 2L3 5.5V12.5L9 16L15 12.5V5.5L9 2Z" stroke="#fff" strokeWidth="1.5" strokeLinejoin="round" />
               </svg>

@@ -4,12 +4,12 @@ import TestimonialCard from "./TestimonyCard";
 
 export default function Testimonials() {
   return (
-    <section className="bg-[#F1F5F9] py-[80px] gap-30">
-      <div className=" mx-auto px-6">
+    <section className="bg-[#F1F5F9] py-[56px] md:py-[80px]">
+      <div className="max-w-6xl mx-auto px-5 md:px-10">
 
         {/* HEADER */}
-        <div className="mb-30 ">
-          <p className="text-[12px] font-semibold tracking-[0.14em] text-[#2563EB] mb-30">
+        <div className="mb-[48px]">
+          <p className="text-[12px] font-semibold tracking-[0.14em] text-[#2563EB] mb-[12px]">
             — TESTIMONIALS
           </p>
 
@@ -24,7 +24,7 @@ export default function Testimonials() {
         </div>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[32px]">
           <TestimonialCard
             text="I was deceived twice buying phones online before Monpa. Now I don't release a kobo until I confirm the item is genuine. No more wahala, no more regret."
             name="Adaeze Okonkwo"

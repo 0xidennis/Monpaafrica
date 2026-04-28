@@ -12,30 +12,30 @@ const users = [
 
 export default function Hero() {
   return (
-    <section className="bg-black text-white h-400 flex items-center justify-center">
-      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 flex items-center justify-between">
+    <section className="bg-black text-white min-h-[150vh] md:min-h-screen flex items-center justify-center py-20 md:py-32">
+      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-12 md:gap-8">
 
         {/* TEXT */}
-        <div className="max-w-xl">
-          <h1 className="text-[34px] md:text-[52px] font-semibold leading-[1.1] tracking-[-0.02em]">
+        <div className="max-w-xl text-center md:text-left">
+          <h1 className="text-[28px] sm:text-[34px] md:text-[52px] font-semibold leading-[1.1] tracking-[-0.02em]">
             Real Nigerians.
             <br />
             Real protection.
           </h1>
 
-          <p className="mt-4 text-[15px] md:text-[16px] text-gray-300 leading-[1.6]">
+          <p className="mt-4 text-[14px] sm:text-[15px] md:text-[16px] text-gray-300 leading-[1.6]">
             Buyers, sellers, freelancers, landlords, and importers
-            <br />
+            <br className="hidden md:block" />
             across 36 states are using Monpa to trade without fear.
           </p>
         </div>
 
         {/* AVATARS */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center justify-center md:justify-end gap-3 flex-wrap">
           {users.map((src, i) => (
             <div
               key={i}
-              className="w-[58px] h-[58px] md:w-[64px] md:h-[64px] rounded-xl overflow-hidden"
+              className="w-[50px] h-[50px] sm:w-[58px] sm:h-[58px] md:w-[64px] md:h-[64px] rounded-xl overflow-hidden"
             >
               <Image
                 src={src}

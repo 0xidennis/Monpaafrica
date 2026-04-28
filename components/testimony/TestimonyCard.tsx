@@ -9,7 +9,7 @@ export default function TestimonialCard({
   image,
 }: any) {
   return (
-    <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-[18px] ">
+    <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-[18px] w-full p-[24px]">
 
       {/* STARS */}
       <div className="text-[#F59E0B] text-[14px] mb-[14px] tracking-[2px]">

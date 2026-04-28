@@ -23,8 +23,8 @@ export default function Home() {
         <How />
         <Features />
         <Faces />
-        <Testimonials />
-        <UseCases />
+        {/* <Testimonials />
+        <UseCases /> */}
         <CTA />
 
         <Footer />

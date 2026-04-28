@@ -41,11 +41,11 @@ export default function Navbar() {
       {menuOpen && (
         <div className="mobile-menu" onClick={() => setMenuOpen(false)}>
           <div className="mobile-menu-inner" onClick={(e) => e.stopPropagation()}>
-            <ul className="mobile-menu-links">
+            <div className="mobile-menu-links">
               <li><a href="#how" onClick={() => setMenuOpen(false)}>How it works</a></li>
               <li><a href="#features" onClick={() => setMenuOpen(false)}>Features</a></li>
               <li><a href="#stories" onClick={() => setMenuOpen(false)}>Stories</a></li>
-            </ul>
+            </div>
             <Link href="/login" className="btn-primary mobile-menu-cta" onClick={() => setMenuOpen(false)}>
               Get Started
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
