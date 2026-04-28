@@ -45,7 +45,7 @@ export default function LoginPage() {
 
         <div className="lc">
           <Link href="/" className="logo-link flex items-center gap-2 mb-6">
-            <div className="logo-icon bg-black "><svg width="20" height="20" viewBox="0 0 18 18" fill="none"><path d="M9 2L3 5.5V12.5L9 16L15 12.5V5.5L9 2Z" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+            <div className="logo-icon bg-black "><svg width="20" height="20" viewBox="0 0 18 18" fill="none"><path d="M9 2L3 5.5V12.5L9 16L15 12.5V5.5L9 2Z" stroke="#fff" strokeWidth="1.5" strokeLinejoin="round"/></svg></div>
            <span className="logo-text">monpa</span>
           </Link>
 
