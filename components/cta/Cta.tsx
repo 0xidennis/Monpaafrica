@@ -13,11 +13,11 @@ export default function CTA() {
   ];
 
   return (
-    <section className="relative w-full  px-[5%] sm:px-[6%] text-center bg-[#0f172a] overflow-hidden">
-      
+    <section className="relative flex items-center justify-center min-h-[500px]  w-full  px-[5%] sm:px-[6%] text-center bg-[#0f172a] overflow-hidden ">
+
       {/* Background layers */}
       <div className="absolute inset-0  from-[#1e293b] via-[#0f172a] to-[#0f172a]"></div>
-      
+
       {/* Subtle radial glow */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse,rgba(37,99,235,0.12)_0%,transparent_65%)] blur-[20px]"></div>
 
@@ -31,9 +31,8 @@ export default function CTA() {
           {faces.map((id, i) => (
             <div
               key={i}
-              className={`relative w-[44px] h-[44px] sm:w-[50px] sm:h-[50px] rounded-full overflow-hidden border-[2.5px] border-white/15 transition-transform duration-200 hover:scale-110 hover:z-10 ${
-                i !== 0 ? "-ml-[10px]" : ""
-              }`}
+              className={`relative w-[44px] h-[44px] sm:w-[50px] sm:h-[50px] rounded-full overflow-hidden border-[2.5px] border-white/15 transition-transform duration-200 hover:scale-110 hover:z-10 ${i !== 0 ? "-ml-[10px]" : ""
+                }`}
             >
               <Image
                 src={`https://images.unsplash.com/${id}?w=100&h=100&fit=crop&crop=face`}

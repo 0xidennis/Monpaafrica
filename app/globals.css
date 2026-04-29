@@ -1339,36 +1339,50 @@ footer {
 /* ---- Hamburger Button ---- */
 .hamburger {
   display: none;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 5px;
-  width: 40px;
-  height: 40px;
-  background: none;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
   border: 1.5px solid var(--border);
-  border-radius: 8px;
+  border-radius: 10px;
+  background: white;
   cursor: pointer;
   z-index: 10002;
-  padding: 0;
-  transition: border-color 0.18s;
+  position: relative;
+  transition: all 0.25s ease;
 }
 
 .hamburger:hover {
   border-color: var(--blue);
+  transform: translateY(-1px);
 }
 
 .hamburger-line {
-  display: block;
+  position: absolute;
   width: 18px;
   height: 2px;
   background: var(--ink);
   border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: all 0.3s ease;
 }
 
+/* Position the 3 lines properly */
+.hamburger-line:nth-child(1) {
+  top: 12px;
+}
+
+.hamburger-line:nth-child(2) {
+  top: 20px;
+}
+
+.hamburger-line:nth-child(3) {
+  top: 28px;
+}
+
+/* OPEN STATE (perfect X) */
 .hamburger-line.open:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: rotate(45deg);
+  top: 20px;
 }
 
 .hamburger-line.open:nth-child(2) {
@@ -1376,7 +1390,8 @@ footer {
 }
 
 .hamburger-line.open:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 20px;
 }
 
 /* ---- Mobile Menu Overlay ---- */
@@ -1384,10 +1399,9 @@ footer {
   position: fixed;
   inset: 0;
   z-index: 10001;
-  background: #ffffff;
-  animation: fadeIn 0.2s ease both;
+  backdrop-filter: blur(12px);
+  animation: fadeIn 0.25s ease;
   display: flex;
-  flex-direction: column;
 }
 
 @keyframes fadeIn {
@@ -1401,14 +1415,14 @@ footer {
 }
 
 .mobile-menu-inner {
+  position: fixed;
   width: 100%;
   height: 100%;
-  background: #ffffff;
   padding: 80px 24px 36px;
+  background: #FFFFFF;
   display: flex;
   flex-direction: column;
-  animation: fadeIn 0.3s ease both;
-  position: relative;
+  animation: slideInRight 0.35s ease;
 }
 
 @keyframes slideInRight {
@@ -1427,6 +1441,8 @@ footer {
   flex-direction: column;
   gap: 4px;
   margin-bottom: 32px;
+  border-radius: 8px;
+
 }
 
 .mobile-menu-links li a {
@@ -1449,6 +1465,16 @@ footer {
   width: 100%;
   justify-content: center;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+  }
 }
 
 /* ---- Breakpoints ---- */

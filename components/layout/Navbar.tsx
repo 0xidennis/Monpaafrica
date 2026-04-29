@@ -1,10 +1,15 @@
 "use client";
+import { useEffect } from "react";
 
 import { useState } from "react";
 import Link from "next/link";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+  }, [menuOpen]);
 
   return (
     <nav>
@@ -28,7 +33,7 @@ export default function Navbar() {
 
       {/* Mobile hamburger button */}
       <button
-        className="hamburger"
+        className={`hamburger ${menuOpen ? "active" : ""}`}
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Toggle menu"
       >
@@ -42,8 +47,8 @@ export default function Navbar() {
         <div className="mobile-menu" onClick={() => setMenuOpen(false)}>
           <div className="mobile-menu-inner" onClick={(e) => e.stopPropagation()}>
             <div className="mobile-menu-links">
-              <li><a href="#how" onClick={() => setMenuOpen(false)}>How it works</a></li>
-              <li><a href="#features" onClick={() => setMenuOpen(false)}>Features</a></li>
+              <li> <a href="#how" onClick={() => setMenuOpen(false)}>How it works</a></li>
+              <li> <a href="#features" onClick={() => setMenuOpen(false)}>Features</a></li>
               <li><a href="#stories" onClick={() => setMenuOpen(false)}>Stories</a></li>
             </div>
             <Link href="/login" className="btn-primary mobile-menu-cta" onClick={() => setMenuOpen(false)}>
