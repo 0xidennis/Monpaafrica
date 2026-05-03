@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useAuth } from "../context/Auth";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 // HYBRID EXACT CLONE: original CSS preserved + React logic
 export default function LoginPage() {
@@ -13,27 +14,27 @@ export default function LoginPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const router = useRouter();
+
   const clearErr = () => setError("");
 
-  const doLogin = async () => {
-    clearErr();
-
-    if (!email || !password) {
-      setError("Please fill in both fields.");
-      return;
-    }
-
-    try {
-      setLoading(true);
-
-      await login(email, password);
-
-      window.location.href = "/dashboard";
-    } catch (err) {
-
-      setLoading(false);
-    }
-  };
+ const doLogin = async () => {
+  clearErr();
+  if (!email || !password) {
+    setError("Please fill in both fields.");
+    return;
+  }
+  try {
+    setLoading(true);
+    await login(email, password);
+    router.push("/dashboard");          // ✅ use router, not window.location
+  } catch (err: unknown) {
+    if (err instanceof Error) setError(err.message);
+    else setError("Login failed. Please try again.");
+  } finally {
+    setLoading(false);                  // ✅ always reset loading
+  }
+};
 
   return (
     <div className="wrap">

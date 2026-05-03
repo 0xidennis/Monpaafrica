@@ -87,33 +87,34 @@ export function AuthProvider({ children }: AuthProviderProps) {
       setLoading(false);
     }
   };
-
-  const login = async (email: string, password: string) => {
-    const res = await fetch("https://monpa-backend.onrender.com/api/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
-
-    const data = await res.json();
-
-    if (!res.ok) {
-      throw new Error(data.message || "Login failed");
+      //login 
+   const login = async (email: string, password: string) => {
+    try {
+      setLoading(true);
+      const res = await fetch("https://monpa-backend.onrender.com/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+ 
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || "Login failed");
+ 
+      if (data.token) {
+        localStorage.setItem("token", data.token);
+        setToken(data.token);
+      }
+      if (data.user) {
+        localStorage.setItem("user", JSON.stringify(data.user));
+        setUser(data.user);
+      }
+ 
+      return data;
+    } catch (err) {
+      throw err;
+    } finally {
+      setLoading(false);
     }
-
-    // Save token + user in both React state and localStorage
-    if (data.token) {
-      localStorage.setItem("token", data.token);
-      setToken(data.token);
-    }
-    if (data.user) {
-      localStorage.setItem("user", JSON.stringify(data.user));
-      setUser(data.user);
-    }
-
-    return data;
   };
 
   const logout = () => {
